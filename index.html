@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha - Ön Yüz Geliştirici</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ana font olarak Inter'i ayarla */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
+        }
+
+        /* Yazı animasyonu için yanıp sönen imleç */
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: #64ffda;
+            animation: blink 1s infinite;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Vurgu rengi */
+        .highlight-cyan { color: #64ffda; }
+        .bg-highlight-cyan { background-color: #64ffda; } /* Efekt için eklendi */
+        .border-highlight-cyan { border-color: #64ffda; }
+
+        /* Proje kartları için özel stil */
+        .project-card {
+            background-color: #112240;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(20, 40, 80, 0.2), 0 10px 10px -5px rgba(20, 40, 80, 0.1);
+        }
+
+        /* Header'ın kaydırma efekti için stiller */
+        header {
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        header.scrolled {
+            background-color: rgba(10, 25, 47, 0.85); /* Hafif şeffaf koyu mavi */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigasyon Menüsü -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-black highlight-cyan">T.D</a>
+            <div class="hidden md:flex space-x-8 items-center text-slate-300">
+                <a href="#about" class="hover:text-cyan-300 transition-colors duration-300">Hakkımda</a>
+                <a href="#projects" class="hover:text-cyan-300 transition-colors duration-300">Projeler</a>
+                <a href="#contact" class="hover:text-cyan-300 transition-colors duration-300">İletişim</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero (Karşılama) Bölümü -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-start">
+            <p class="text-lg highlight-cyan mb-4">Merhaba, benim adım</p>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-100">Taha</h1>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-400 mt-2">
+                <span id="typing-effect"></span>
+                <span class="typing-cursor"></span>
+            </h2>
+            <p class="mt-6 max-w-xl text-lg text-slate-400">
+                Ondokuz Mayıs Üniversitesi'nde Ön Yüz Geliştirme öğrencisiyim. Sürekli yeni projeler üreterek kendimi geliştirmeye ve harika fikirleri koda dönüştürmeye tutkuluyum.
+            </p>
+            <a href="#projects" class="mt-8 border border-highlight-cyan text-highlight-cyan text-lg font-medium px-8 py-4 rounded-md hover:bg-cyan-300/10 transition-colors duration-300">
+                Projelerimi Gör
+            </a>
+        </section>
+
+        <!-- Hakkımda Bölümü -->
+        <section id="about" class="py-20 lg:py-32">
+            <div class="flex items-center w-full mb-12">
+                <h2 class="text-3xl font-bold text-slate-100 whitespace-nowrap">
+                    <span class="highlight-cyan font-mono text-2xl mr-3">01.</span>Hakkımda
+                </h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
+                <div class="w-full md:w-2/3 text-slate-400 text-lg space-y-4">
+                    <p>
+                        Merhaba! Ben Taha. Teknolojiye olan merakım beni yazılım dünyasına çekti ve şu anda Ondokuz Mayıs Üniversitesi'nde Ön Yüz Geliştirme bölümünde bu tutkumu akademik olarak da besliyorum.
+                    </p>
+                    <p>
+                        Öğrenim hayatım boyunca sadece derslerle sınırlı kalmayıp, sürekli yeni projeler üreterek ve güncel teknolojileri takip ederek kendimi geliştiriyorum. Kullanıcılar için anlamlı, modern ve verimli çözümler üretmek en büyük motivasyon kaynağım.
+                    </p>
+                    <p>İşte son zamanlarda üzerinde çalıştığım ve sevdiğim bazı teknolojiler:</p>
+                    <ul class="grid grid-cols-2 gap-2 mt-4" id="skills-list">
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>JavaScript (ES6+)</li>
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>React</li>
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>Node.js</li>
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>Tailwind CSS</li>
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>Vue.js</li>
+                        <li class="flex items-center"><span class="highlight-cyan mr-2">▹</span>Firebase</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="relative group">
+                        <div class="absolute -inset-0.5 bg-highlight-cyan rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <img class="relative w-full h-auto rounded-lg" src="https://github.com/tahadulger1/Portfolyom/blob/main/PORTRE.jpg?raw=true" alt="Profil Fotoğrafınız" onerror="this.onerror=null;this.src='https://placehold.co/500x500/112240/ccd6f6?text=Profil+Foto';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projeler Bölümü -->
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="flex items-center w-full mb-12">
+                <h2 class="text-3xl font-bold text-slate-100 whitespace-nowrap">
+                    <span class="highlight-cyan font-mono text-2xl mr-3">02.</span>Ürettiğim Projeler
+                </h2>
+                <div class="w-full h-px bg-slate-700 ml-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-list">
+                
+                <!-- Proje 1 -->
+                <div class="project-card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/tahadulger1/giresun-yumurta-website" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors" title="GitHub Kodu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            <a href="http://giresunyumurta.com" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors" title="Canlı Site"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title text-xl font-bold text-slate-100 mb-2">giresunyumurta.com</h3>
+                    <p class="project-description text-slate-400 text-sm flex-grow">
+                        Aile firmamız için geliştirdiğim kurumsal web sitesi. Ürünleri ve firma bilgilerini modern bir arayüzle sunar.
+                    </p>
+                    <div class="project-tech mt-4 text-xs font-mono text-slate-400 space-x-3">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Proje 2 -->
+                 <div class="project-card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M12 12h4"></path><path d="M12 16h4"></path><path d="M8 12h.01"></path><path d="M8 16h.01"></path></svg>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/tahadulger1/tahadulger1.github.io" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors" title="GitHub Kodu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                            <a href="https://tahadulger1.github.io" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors" title="Canlı Demo"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title text-xl font-bold text-slate-100 mb-2">Yapay Zeka Ad-Soyad Analizi</h3>
+                    <p class="project-description text-slate-400 text-sm flex-grow">
+                        Kendimi geliştirmek ve yapay zeka teknolojilerini deneyimlemek amacıyla geliştirdiğim isim ve soyisim uyum analizi projesi.
+                    </p>
+                    <div class="project-tech mt-4 text-xs font-mono text-slate-400 space-x-3">
+                        <span>JavaScript</span>
+                        <span>AI API</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+
+                <!-- Proje 3 -->
+                <div class="project-card p-6 rounded-lg flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/tahadulger1" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors" title="GitHub Profilim"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title text-xl font-bold text-slate-100 mb-2">Kişisel Projelerim</h3>
+                    <p class="project-description text-slate-400 text-sm flex-grow">
+                        Kişisel kullanım ve öğrenme amaçlı projelerim: Albüm arşivi, Dizi/Film koleksiyonu ve firma için bir muhasebe uygulaması.
+                    </p>
+                    <div class="project-tech mt-4 text-xs font-mono text-slate-400 space-x-3">
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- İletişim Bölümü -->
+        <section id="contact" class="text-center py-20 lg:py-40">
+            <h2 class="text-2xl font-mono highlight-cyan">03. Sıradaki Ne?</h2>
+            <h3 class="text-5xl font-bold text-slate-100 mt-4">İletişime Geçin</h3>
+            <p class="mt-6 max-w-xl mx-auto text-slate-400">
+                Her zaman yeni fikirleri ve projeleri konuşmaya açığım. İster bir sorunuz olsun, ister sadece selam vermek isteyin, size en kısa sürede geri döneceğim!
+            </p>
+            <div class="mt-10">
+                <a href="mailto:tahadulger10@gmail.com" class="inline-block border border-highlight-cyan text-highlight-cyan text-lg font-medium px-8 py-4 rounded-md hover:bg-cyan-300/10 transition-colors duration-300">
+                    Merhaba De!
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer ve Sosyal Medya Linkleri -->
+    <footer class="container mx-auto px-6 py-6">
+        <div class="flex justify-center items-center space-x-6">
+            <a href="https://github.com/tahadulger1" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/taha-dulger-71a906309/" target="_blank" class="text-slate-400 hover:text-highlight-cyan transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+        <div class="text-center text-slate-500 text-sm mt-4 font-mono">
+            Tasarım & Kodlama: Taha
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Header Scroll Efekti ---
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- İnteraktif Yazı Efekti ---
+            const typingElement = document.getElementById('typing-effect');
+            const words = ["Ön Yüz Geliştirici.", "React Meraklısı.", "Teknoloji Tutkunu.", "Problem Çözücü."];
+            let wordIndex = 0, letterIndex = 0, isDeleting = false;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                if (isDeleting) {
+                    typingElement.textContent = currentWord.substring(0, letterIndex--);
+                } else {
+                    typingElement.textContent = currentWord.substring(0, letterIndex++);
+                }
+
+                if (!isDeleting && letterIndex === currentWord.length) {
+                    setTimeout(() => { isDeleting = true; type(); }, 2000);
+                } else if (isDeleting && letterIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 75 : 150);
+                }
+            }
+            type();
+        });
+    </script>
+</body>
+</html>
